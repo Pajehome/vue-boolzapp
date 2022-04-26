@@ -68,7 +68,7 @@
                         </span>
                     </div>
 
-                    <div class="bg ">
+                    <div class="bg" v-for="(messaggio, index) in contacts" :key="index">
                         <div class="chat row">
                             <div class="col-12 mb-2">
                                 <div class="green"></div>
@@ -77,7 +77,6 @@
                                 <div class="white"></div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -96,3 +95,4 @@ attivo all’interno del pannello della conversazione
 </body>
 
 </html>
+
