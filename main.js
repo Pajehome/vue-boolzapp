@@ -164,11 +164,15 @@ const myContact = new Vue({
 	        ],
 	    }
         ], currentIndex: 0,
-        imageIndex:1,
+        imageIndex: 1,
     },
     methods: {
-        click(index) {
-            index = currentIndex;
-        }
+   
+        selezione(index) {
+            this.currentIndex = index;
+            this.imageIndex = index + 1;
+        },
+
+    
     },
 })

@@ -16,9 +16,9 @@
 <body>
     <header></header>
     <main id="app">
-        <div class="container">
+        <div class="container" tabindex="0">
             <div class="row h-100">
-                <div class="col-4 px-0 border border-primary">
+                <div class="col-4 px-0">
 
                     <div class="profilo d-flex w-100 justify-content-between align-items-center">
                         <div class="h5">
@@ -44,7 +44,7 @@
                     <input type="text">
 
                     <ul>
-                        <li @click="click(index)" :class="{'active': index === currentIndex}"
+                        <li @click="selezione(index)" :class="{'active': index === currentIndex}"
                             v-for="(contatto, index) in contacts">
                             <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="">
                             <div>
@@ -54,7 +54,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-8 px-0 border border-primary">
+                <div class="col-8 px-0">
                     <div class="profilo d-flex w-100 justify-content-between align-items-center" tabindex="0">
                         <div class="h5">
                             <img class='avatar rounded-circle' :src="'img/avatar_'+ imageIndex +'.jpg'" alt="">
@@ -68,14 +68,25 @@
                         </span>
                     </div>
 
-                    <div class="bg">
-                        div
+                    <div class="bg ">
+                        <div class="chat row">
+                            <div class="col-12 mb-2">
+                                <div class="green"></div>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <div class="white"></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- ⦁ Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto
+attivo all’interno del pannello della conversazione
+⦁ Click sul contatto mostra la conversazione del contatto cliccato -->
 
 
 
