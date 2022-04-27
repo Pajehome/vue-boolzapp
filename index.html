@@ -47,14 +47,12 @@
                     <ul>
                         <li @click="selezione(index)" :class="{'active': index === currentIndex}"
                             v-for="(contatto, index) in contacts">
-                            <div v-if="contatto.visible">
-                                <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="">
-                                <div>
+
+                                <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt=""  v-if="contatto.visible">
+                                <div v-if="contatto.visible">
                                     <h5 class='mb-0'>{{contatto.name}}</h5>
                                     <p class="text-secondary">Ultimo messaggio inviato</p>
                                 </div>
-                            </div>
-                            
                         </li>
                     </ul>
                 </div>
