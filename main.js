@@ -168,7 +168,7 @@ const myContact = new Vue({
         imageIndex: 1,
 		addMessage: '',
 		filtra: '',
-		filtrati:[],
+		
     },
     methods: {
    
@@ -195,8 +195,14 @@ const myContact = new Vue({
 			setTimeout(() => this.contacts[this.currentIndex].messages.push(answerMessage), 1000);
 		},
 		cerca(){
-            this.filtrati = this.contacts.filter((items) =>{
-				return items.name.includes(this.filtra)
+            this.contacts.forEach((items) =>{
+
+				if(items.name.toLowerCase().includes(this.filtra.toLowerCase())){
+					items.visible = true
+				}
+				else{
+					items.visible = false
+				}
 			})
 		}
 

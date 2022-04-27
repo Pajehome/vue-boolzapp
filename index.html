@@ -42,16 +42,19 @@
                         </div>
                     </div>
 
-                    <input @keyup='cerca()' keyuptype="text" placeholder="Cerca tra i contatti" v-model="filtra">
+                    <input @keyup='cerca' type="text" placeholder="Cerca tra i contatti" v-model="filtra">
 
                     <ul>
                         <li @click="selezione(index)" :class="{'active': index === currentIndex}"
                             v-for="(contatto, index) in contacts">
-                            <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="">
-                            <div>
-                                <h5 class='mb-0'>{{contatto.name}}</h5>
-                                <p class="text-secondary">Ultimo messaggio inviato</p>
+                            <div v-if="contatto.visible">
+                                <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="">
+                                <div>
+                                    <h5 class='mb-0'>{{contatto.name}}</h5>
+                                    <p class="text-secondary">Ultimo messaggio inviato</p>
+                                </div>
                             </div>
+                            
                         </li>
                     </ul>
                 </div>
