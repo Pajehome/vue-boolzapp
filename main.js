@@ -152,7 +152,7 @@ const myContact = new Vue({
 	                status: 'received'
 	            },
 	            {
-	                date: '10/01/2020 15:50:00',
+	                date: dayjs('2019-01-25').format('DD/MM/YYYY HH:mm:ss'),
 	                message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
 	                status: 'sent'
 	            },
@@ -163,7 +163,8 @@ const myContact = new Vue({
 	            }
 	        ],
 	    }
-        ], currentIndex: 0,
+        ], 
+		currentIndex: 0,
         imageIndex: 1,
     },
     methods: {
@@ -173,6 +174,5 @@ const myContact = new Vue({
             this.imageIndex = index + 1;
         },
 
-    
     },
 })
