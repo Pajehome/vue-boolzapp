@@ -83,15 +83,19 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row w-100 input">
+                            <div class="col-12">
+                              <input @keyup.enter="sentMessage" type="text" placeholder="Type your message here..." v-model="addMessage">
+                              </div>
+                            </div>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- ⦁ Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto
-attivo all’interno del pannello della conversazione
-⦁ Click sul contatto mostra la conversazione del contatto cliccato -->
 
 
 

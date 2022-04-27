@@ -21,9 +21,9 @@ main{
 .container{
     position: absolute;
     top: 20px;
-    height: 95vh;
+    height: 822px;
     min-width: 800px;
-    background-color: #fff;
+    background-color: rgb(239, 239, 239);
 }
 .profilo{
     background-color: #EAEAEA;
@@ -65,7 +65,7 @@ ul li{
 .bg{
     background-image: url(/img/mine.jpg);
     height: calc(100% - 140px);
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 .green{
     width:45%;
@@ -91,4 +91,23 @@ ul li{
     word-break: break-all;
     padding: 10px 15px;
     float: left;    
+}
+.chat-box-tray {
+    background: rgb(185, 188, 189);
+    display: flex;
+    align-items: baseline;
+    padding: 10px 15px;
+    align-items: center;
+    margin-top: 19px;
+    bottom: 0;
+    height: 100%;
+    
+}    
+.input{
+    position: absolute;
+    bottom: 7px;
+}
+.input input{
+    width: 60%;
+    margin-left:10px;
 }

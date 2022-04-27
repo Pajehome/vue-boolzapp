@@ -166,6 +166,7 @@ const myContact = new Vue({
         ], 
 		currentIndex: 0,
         imageIndex: 1,
+		addMessage: '',
     },
     methods: {
    
@@ -174,5 +175,25 @@ const myContact = new Vue({
             this.imageIndex = index + 1;
         },
 
+		sentMessage(){
+			const newMessage = {
+				date: '10/01/2020 15:30:55',
+				message: this.addMessage,
+				status: 'sent'
+			}
+			this.contacts[this.currentIndex].messages.push(newMessage);
+			console.log(this.contacts[this.currentIndex].messages)
+
+			const answerMessage = {
+				date: '10/01/2020 15:31:55',
+				message: 'Ok',
+				status: 'received'
+			}
+			setTimeout(() => this.contacts[this.currentIndex].messages.push(answerMessage), 1000);
+		}
+
     },
 })
+
+// ⦁	Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// ⦁	Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
