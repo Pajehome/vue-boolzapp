@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <input type="text">
+                    <input @keyup='cerca()' keyuptype="text" placeholder="Cerca tra i contatti" v-model="filtra">
 
                     <ul>
                         <li @click="selezione(index)" :class="{'active': index === currentIndex}"
@@ -86,7 +86,7 @@
 
                         <div class="row w-100 input">
                             <div class="col-12">
-                              <input @keyup.enter="sentMessage" type="text" placeholder="Type your message here..." v-model="addMessage">
+                              <input @keyup.enter="sentMessage" type="text" placeholder="Inserisci messaggio" v-model="addMessage">
                               </div>
                             </div>
                             </div>

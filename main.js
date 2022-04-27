@@ -167,6 +167,8 @@ const myContact = new Vue({
 		currentIndex: 0,
         imageIndex: 1,
 		addMessage: '',
+		filtra: '',
+		filtrati:[],
     },
     methods: {
    
@@ -182,6 +184,7 @@ const myContact = new Vue({
 				status: 'sent'
 			}
 			this.contacts[this.currentIndex].messages.push(newMessage);
+			this.addMessage= '';
 			console.log(this.contacts[this.currentIndex].messages)
 
 			const answerMessage = {
@@ -190,10 +193,15 @@ const myContact = new Vue({
 				status: 'received'
 			}
 			setTimeout(() => this.contacts[this.currentIndex].messages.push(answerMessage), 1000);
+		},
+		cerca(){
+            this.filtrati = this.contacts.filter((items) =>{
+				return items.name.includes(this.filtra)
+			})
 		}
 
     },
 })
 
-// ⦁	Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// ⦁	Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+// ⦁	Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
