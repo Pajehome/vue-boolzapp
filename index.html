@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <header></header>
     <main id="app">
-        <div class="container" tabindex="0">
+        <div class="container size">
             <div class="row h-100">
                 <div class="col-4 px-0">
 
@@ -28,31 +27,43 @@
                         </div>
 
                         <span class='d-flex gap-2 px-2'>
-                            <i class="fas fa-circle-notch"></i>
-                            <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-circle-notch cursor"></i>
+                            <i class="fas fa-comment-alt cursor"></i>
+                            <i class="fas fa-ellipsis-v cursor"></i>
                         </span>
                     </div>
 
                     <div class="notifiche d-flex w-100  align-items-center ">
-                        <i class="mx-2 fas fa-bell-slash"></i>
+                        <i class="mx-2 fas fa-bell-slash cursor"></i>
                         <div>
                             <h6 class="d-block">Ricevi notifiche di nuovi messaggi</h6>
                             <a href="">Attiva notifiche desktop</a>
                         </div>
                     </div>
 
-                    <input @keyup='cerca' type="text" placeholder="Cerca tra i contatti" v-model="filtra">
+                    <div class="search-contact">
+                        <input class='inputSearch' @keyup='cerca' type="text" placeholder="Cerca tra i contatti"
+                            v-model="filtra">
+                        <i class="fas fa-search find cursor"></i>
+                    </div>
+
 
                     <ul>
                         <li @click="selezione(index)" :class="{'active': index === currentIndex}"
-                            v-for="(contatto, index) in contacts"  v-if="contatto.visible">
+                            v-for="(contatto, index) in contacts" v-if="contatto.visible">
 
-                                <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="">
-                                <div>
-                                    <h5 class='mb-0'>{{contatto.name}}</h5>
-                                    <p class="text-secondary">Ultimo messaggio inviato</p>
-                                </div>
+                            <img class='avatar rounded-circle' :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="">
+                            <div>
+                                <h5 class='mb-0'>{{contatto.name}}</h5>
+                                <p class="text-secondary">
+                                    Ultimo messaggio inviato alle: <span class="data">
+                                        {{contatto.messages[currentIndex].date}}
+                                    </span>
+                                </p>
+
+                                <span></span>
+                                </p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -64,36 +75,40 @@
                         </div>
 
                         <span class='d-flex gap-2 px-2'>
-                            <i class="fas fa-search"></i>
-                            <i class="fas fa-paperclip"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-search cursor"></i>
+                            <i class="fas fa-paperclip cursor"></i>
+                            <i class="fas fa-ellipsis-v cursor"></i>
                         </span>
                     </div>
 
-                    <div class="bg" >
+                    <div class="bg">
 
-                        <div  class="chat row">
-                            <div class="col-12 mb-2" v-for="(messaggio, index) in contacts[currentIndex].messages" :key="index" >
+                        <div class="chat row">
+                            <div class="col-12 mb-2" v-for="(messaggio, index) in contacts[currentIndex].messages"
+                                :key="index">
                                 <div :class="messaggio.status === 'sent' ? 'green' : 'white'">
                                     <span>
                                         {{messaggio.message}}
                                     </span>
-                                    <span>
+                                    <span class="data">
                                         {{messaggio.date}}
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row w-100 input">
+                        <div class="row  inputAdd">
                             <div class="col-12">
-                              <input @keyup.enter="sentMessage" type="text" placeholder="Inserisci messaggio" v-model="addMessage">
-                              </div>
+                                <input @keyup.enter="sentMessage" type="text" placeholder="Inserisci messaggio"
+                                    v-model="addMessage">
+                                <i @click='sentMessage' class="fas fa-paper-plane cursor"></i>
+                                <i class="fas fa-microphone cursor"></i>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 
@@ -106,4 +121,3 @@
 </body>
 
 </html>
-

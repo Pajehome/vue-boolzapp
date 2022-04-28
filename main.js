@@ -152,7 +152,7 @@ const myContact = new Vue({
 	                status: 'received'
 	            },
 	            {
-	                date: dayjs('2019-01-25').format('DD/MM/YYYY HH:mm:ss'),
+	                date: '10/01/2020 15:30:55',
 	                message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
 	                status: 'sent'
 	            },
@@ -208,6 +208,3 @@ const myContact = new Vue({
 
     },
 })
-
-
-// ⦁	Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)

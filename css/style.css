@@ -5,26 +5,30 @@
 }
 body {
     height: 100vh;
+    overflow: hidden;
+}
+.cursor{
+    cursor: pointer;
 }
 header{
     height: 100px;
     background-color: #009688;
 }
 main{
-    height: calc(100vh - 100px);
+    height: 100vh;
     background-color: #DADBD3;
     display: flex;
     justify-content: center;
+    position: relative;
 }
-
-
 .container{
     position: absolute;
     top: 20px;
-    height: 822px;
+    height: 95vh;
     min-width: 800px;
-    background-color: rgb(239, 239, 239);
+    background-color: #fff;
 }
+
 .profilo{
     background-color: #EAEAEA;
     height: 80px;
@@ -48,8 +52,26 @@ main{
     font-size: 25px;
     padding: 8px 5px;
 }
+.search-contact{
+    position: relative;
+    height: 41px;
+    padding: 7px;
+    background-color: #efefef;
+}
+.inputSearch{
+    margin-left: 10px;
+    padding-left: 30px;
+    width: 65%;
+}
+.find{
+    position: absolute;
+    left: 25px;
+    top: 14px;
+}   
 ul{
     padding-left:0;
+    height: 57%;
+    overflow-y: scroll;
 }
 ul li{
     padding-left:15px;
@@ -64,8 +86,17 @@ ul li{
 }
 .bg{
     background-image: url(/img/mine.jpg);
-    height: calc(100% - 140px);
-    overflow-x: hidden;
+    height: 600px;
+    position: relative; 
+    overflow: auto;
+}
+.chat {
+    width: 800px;
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 0px;
+    position: relative;
+
 }
 .green{
     width:45%;
@@ -74,15 +105,10 @@ ul li{
     word-break: break-all;
     padding:10px 15px;
     float: right;
-    
-}
-.chat{
-    width: 800px;
     display: flex;
-    margin: 0 auto;
-    padding: 50px 0px;
-    position: relative;
-
+    justify-content: space-between;
+    align-items: center;
+    
 }
 .white{
     width: 45%;
@@ -90,24 +116,33 @@ ul li{
     border-radius: 10px;
     word-break: break-all;
     padding: 10px 15px;
-    float: left;    
-}
-.chat-box-tray {
-    background: rgb(185, 188, 189);
+    float: left;
     display: flex;
-    align-items: baseline;
-    padding: 10px 15px;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 19px;
-    bottom: 0;
-    height: 100%;
-    
-}    
-.input{
-    position: absolute;
-    bottom: 7px;
 }
-.input input{
-    width: 60%;
-    margin-left:10px;
+
+.inputAdd{
+    position: fixed;
+    bottom: 12px;
+    width: 880px;
+    margin: 0;
+    background: #eaeaea;
+    height: 43px;
+    padding: 8px;
 }
+.inputAdd input{
+    width: 760px;
+}
+.inputAdd i{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.inputAdd .fa-microphone {
+    margin-left: 20px;
+    font-size: 20px;
+}
+.data{
+    font-size: 12px;
+}
+
