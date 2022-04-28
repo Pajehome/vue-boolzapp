@@ -1,7 +1,7 @@
 const myContact = new Vue({
     el: '#app',
     data: {
-        	contacts: [
+        contacts: [
 	    {
 	        name: 'Michele',
 	        avatar: '_1',
@@ -20,7 +20,7 @@ const myContact = new Vue({
 	            {
 	                date: '10/01/2020 16:15:22',
 	                message: 'Tutto fatto!',
-	                status: 'received'
+					status: 'received'
 	            }
 	        ],
 	    },
@@ -175,8 +175,8 @@ const myContact = new Vue({
         selezione(index) {
             this.currentIndex = index;
             this.imageIndex = index + 1;
-        },
-
+		},
+		
 		sentMessage(){
 			const newMessage = {
 				date: '10/01/2020 15:30:55',
@@ -204,7 +204,12 @@ const myContact = new Vue({
 					items.visible = false
 				}
 			})
-		}
+		},
 
+		ultimoMessaggio(index) {
+			const contactsIndex = this.contacts[index];
+			const lastMessagesObj = contactsIndex.messages.length - 1;
+			return this.contacts[index].messages[lastMessagesObj].date;	
+		},
     },
 })
