@@ -209,7 +209,8 @@ const myContact = new Vue({
 		ultimoMessaggio(index) {
 			const contactsIndex = this.contacts[index];
 			const lastMessagesObj = contactsIndex.messages.length - 1;
-			return this.contacts[index].messages[lastMessagesObj].date;	
+			const lastDate = contactsIndex.messages[lastMessagesObj].date
+			return lastDate;	
 		},
     },
 })

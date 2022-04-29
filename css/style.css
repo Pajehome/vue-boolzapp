@@ -85,7 +85,7 @@ ul li{
     background-color:lightgray;
 }
 .bg{
-    background-image: url(/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     height: 600px;
     position: relative; 
     overflow: auto;
